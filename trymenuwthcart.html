@@ -271,7 +271,47 @@
         </div>
       </div>
 
-  
+      <!-- STEP 2 — GCash -->
+      <div id="step-gcash" style="display:none;">
+        <div class="modal-header">
+          <div>
+            <h3>GCash Payment</h3>
+            <p>Enter your 6-digit MPIN to confirm.</p>
+          </div>
+          <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="gcash-screen">
+          <div class="gcash-logo">G</div>
+          <div class="gcash-brand">GCash</div>
+          <div class="gcash-amount" id="gcash-amount">₱0 <small>PHP</small></div>
+          <div class="gcash-merchant">Pay to <strong>Leo's Café</strong><br>1198 Asuncion St., Tondo, Manila</div>
+          <div class="gcash-pin-label">Enter MPIN</div>
+          <div class="gcash-pin-dots" id="pin-dots">
+            <div class="gcash-pin-dot"></div>
+            <div class="gcash-pin-dot"></div>
+            <div class="gcash-pin-dot"></div>
+            <div class="gcash-pin-dot"></div>
+            <div class="gcash-pin-dot"></div>
+            <div class="gcash-pin-dot"></div>
+          </div>
+          <div class="gcash-keypad">
+            <div class="gcash-key" onclick="pinInput('1')">1</div>
+            <div class="gcash-key" onclick="pinInput('2')">2</div>
+            <div class="gcash-key" onclick="pinInput('3')">3</div>
+            <div class="gcash-key" onclick="pinInput('4')">4</div>
+            <div class="gcash-key" onclick="pinInput('5')">5</div>
+            <div class="gcash-key" onclick="pinInput('6')">6</div>
+            <div class="gcash-key" onclick="pinInput('7')">7</div>
+            <div class="gcash-key" onclick="pinInput('8')">8</div>
+            <div class="gcash-key" onclick="pinInput('9')">9</div>
+            <div class="gcash-key zero" onclick="pinInput('0')">0</div>
+            <div class="gcash-key del" onclick="pinDelete()"><i class="fa-solid fa-delete-left"></i></div>
+          </div>
+          <button class="gcash-confirm-btn" id="gcash-confirm-btn" onclick="submitGcash()">
+            Confirm Payment
+          </button>
+        </div>
+      </div>
 
       <!-- STEP 3 — Success -->
       <div id="step-success" style="display:none;">
