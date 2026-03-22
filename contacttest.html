@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Leo's Café</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="contacttest.css" />
+</head>
+<body>
+  <header id="navbar">
+    <a href="https://drasthxc.github.io/leo-scafe/index.html" class="logo-wrap">
+      <div class="logo-icon"><i class="fa-solid fa-mug-hot"></i></div>
+      <span class="logo-text">Leo's <span>Café</span></span>
+    </a>
+    <button class="hamburger" id="hamburger"><i class="fa fa-bars"></i></button>
+    <nav id="main-nav">
+      <a href="https://drasthxc.github.io/leo-scafe/index.html">Home</a>
+      <a href="https://drasthxc.github.io/leo-scafe/menuv2.html">Menu</a>
+      <a href="https://drasthxc.github.io/leo-scafe/locationz.html">Locations</a>
+      <a href="https://drasthxc.github.io/leo-scafe/abt%20us.html">About</a>
+      <a href="https://drasthxc.github.io/leo-scafe/contacttest%20(main).html" class="active">Contact</a>
+      <a href="https://drasthxc.github.io/leo-scafe/careers.html">Careers</a>
+      <a href="https://drasthxc.github.io/leo-scafe/deliveries.html">Delivery</a>
+      <a href="https://drasthxc.github.io/leo-scafe/FAQQ2%20(msin).html">FAQ</a>
+      <a href="https://drasthxc.github.io/leo-scafe/deliveries.html" class="nav-cta">Order Now</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-tag">We're here for you</p>
+      <h1>Get in <em>Touch</em></h1>
+      <p class="hero-sub">Whether it's feedback, a reservation, or just a hello — we'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <!-- Contact channels -->
+    <div class="contact-channels fade-up">
+      <a href="https://www.facebook.com/LeosCafeManila" target="_blank" class="channel-card">
+        <div class="channel-icon" style="background:rgba(24,119,242,.15); border-color:rgba(24,119,242,.3);">
+          <i class="fab fa-facebook" style="color:#4a90d9;"></i>
+        </div>
+        <div>
+          <h3>Facebook</h3>
+          <p>facebook.com/LeosCafeManila</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square channel-arrow"></i>
+      </a>
+
+      <div class="channel-card">
+        <div class="channel-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div>
+          <h3>Email</h3>
+          <p>Leoscafemanila@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="channel-card">
+        <div class="channel-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div>
+          <h3>Phone</h3>
+          <p>09567004652</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider" style="margin:48px 0;"></div>
+
+    <!-- Feedback form -->
+    <div class="contact-form-wrap fade-up">
+      <div class="contact-form-header">
+        <h2>Tell us what you think.</h2>
+        <p>Your feedback helps us serve you better.</p>
+      </div>
+      <form class="leos-form" action="/action_page.php">
+        <label for="fname">Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" />
+
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject">
+          <option value="store feedback">Store Feedback</option>
+          <option value="general feedback">General Feedback</option>
+          <option value="reservation">Reservation</option>
+          <option value="media">Media</option>
+          <option value="marketing">Marketing</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us more..."></textarea>
+
+        <input type="submit" value="Send Message" />
+      </form>
+    </div>
+  </section>
+
+  <a href="#" class="chat-btn"><i class="fa-solid fa-comment"></i></a>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('main-nav').classList.toggle('open'));
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.style.animationPlayState='running'; obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.fade-up').forEach((el,i) => { el.style.animationDelay=`${i*.12}s`; el.style.animationPlayState='paused'; obs.observe(el); });
+  </script>
+</body>
+</html>

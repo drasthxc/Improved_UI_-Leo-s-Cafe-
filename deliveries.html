@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivery — Leo's Café</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="deliveries.css" />
+</head>
+<body>
+  <header id="navbar">
+    <a href="https://drasthxc.github.io/leo-scafe/index.html" class="logo-wrap">
+      <div class="logo-icon"><i class="fa-solid fa-mug-hot"></i></div>
+      <span class="logo-text">Leo's <span>Café</span></span>
+    </a>
+    <button class="hamburger" id="hamburger"><i class="fa fa-bars"></i></button>
+    <nav id="main-nav">
+      <a href="https://drasthxc.github.io/leo-scafe/index.html">Home</a>
+      <a href="https://drasthxc.github.io/leo-scafe/menuv2.html">Menu</a>
+      <a href="https://drasthxc.github.io/leo-scafe/locationz.html">Locations</a>
+      <a href="https://drasthxc.github.io/leo-scafe/abt%20us.html">About</a>
+      <a href="https://drasthxc.github.io/leo-scafe/contacttest%20(main).html">Contact</a>
+      <a href="https://drasthxc.github.io/leo-scafe/careers.html">Careers</a>
+      <a href="https://drasthxc.github.io/leo-scafe/deliveries.html" class="active">Delivery</a>
+      <a href="https://drasthxc.github.io/leo-scafe/FAQQ2%20(msin).html">FAQ</a>
+      <a href="https://drasthxc.github.io/leo-scafe/trymenuwthcart.html" class="nav-cta">Order Now</a>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <p class="hero-tag">At your doorstep</p>
+      <h1>Leo's <em>Delivery</em></h1>
+      <p class="hero-sub">Your favorites, delivered fresh — right to your door with a single tap.</p>
+    </div>
+  </section>
+
+  <section class="delivery-section">
+    <p class="delivery-intro fade-up">We've partnered with the best delivery platforms so you can enjoy Leo's Café from the comfort of your home. Choose your preferred platform below.</p>
+
+    <div class="partner-grid">
+      <div class="partner-card fade-up">
+        <div class="partner-info">
+          <h3>Foodpanda</h3>
+          <p>Order via Foodpanda for fast, reliable delivery right to your door.</p>
+          <a href="#" class="btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Order on Foodpanda</a>
+        </div>
+      </div>
+
+      <div class="partner-card fade-up">
+        <div class="partner-info">
+          <h3>GrabFood</h3>
+          <p>Find us on GrabFood and get your order delivered in no time.</p>
+          <a href="#" class="btn-primary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Order on GrabFood</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="delivery-note fade-up">
+      <i class="fa-solid fa-circle-info"></i>
+      <p>Delivery availability depends on your location. For inquiries, <a href="https://drasthxc.github.io/leo-scafe/contacttest%20(main).html">contact us directly</a>.</p>
+    </div>
+  </section>
+
+  <a href="https://drasthxc.github.io/leo-scafe/contacttest%20(main).html" class="chat-btn"><i class="fa-solid fa-comment"></i></a>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('main-nav').classList.toggle('open'));
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.style.animationPlayState='running'; obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.fade-up').forEach((el,i) => { el.style.animationDelay=`${i*.12}s`; el.style.animationPlayState='paused'; obs.observe(el); });
+  </script>
+</body>
+</html>
